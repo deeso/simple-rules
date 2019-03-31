@@ -12,7 +12,7 @@ setup(name='simple-rules',
       description='Library for implement simple rule matching',
       author='Adam Pridgen',
       author_email='adam.pridgen.phd@gmail.com',
-      install_requires=['toml', 'wheel', 'regex'],
+      install_requires=['toml', 'wheel', 'regex', 'jellyfish'],
       packages=find_packages('src'),
       package_dir={'': 'src'},
 )

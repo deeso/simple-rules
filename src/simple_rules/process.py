@@ -1,46 +1,6 @@
 from .consts import *
 from .validate import TokenStreamValidator
 from .parser import Parser
-import regex
-
-class MatchClass(object):
-    TYPE = ACTION
-
-    def __init__(self):
-        self.match_mapping = {}
-
-    def register_class(self, klass, transform):
-        self.match_mapping[klass] = transform
-
-    def execute(self, obj):
-        return self.match(obj)
-
-    def match(self, obj):
-        typ = type(obj)
-        if typ in self.match_mapping:
-            return self.match_mapping[typ](obj)
-        return self.match_default(obj)
-
-    def match_default(self, obj):
-        return False
-
-
-class RegexMatch(MatchClass):
-    def __init__(self, name, regex):
-        super(MatchClass, self).__init__()
-        self._name = name
-        self.regex = regex.compile(regex)
-        self.register_class(str, self.match_string)
-
-    @property
-    def name(self):
-        return self._name
-
-    def match_string(self, input_string):
-        return self.regex.match(input_string)
-
-    def match_default(self, obj):
-        return self.regex.match(str(obj))
 
 
 class Rule(object):

@@ -1,3 +1,5 @@
 regex
 toml
 wheel
+sklearn
+jellyfish

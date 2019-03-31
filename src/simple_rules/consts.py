@@ -1,4 +1,6 @@
 import string
+
+ASCII_CHARS = "".join(string.ascii_lowercase + string.digits)
 REGEX = 'regex'
 
 
@@ -30,3 +32,10 @@ EXIT_GROUP_NEXT = [ENTER_GROUP, EXIT_GROUP, AND, OR]
 
 PREDICATE = 'PREDICATE'
 ACTION = 'ACTION'
+
+SIMPLE_RULES_BLOCK = 'simple-rules'
+
+REGEX_BLOCK = 'regular-expressions'
+
+IGNORE_CHAIN = 'ignore-chain'
+MATCH_CHAIN = 'match-chain'
